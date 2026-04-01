@@ -1,13 +1,15 @@
-function Header() {
+import { ChefHat, Moon, Sun } from "lucide-react";
+
+function Header(props) {
   return (
     <>
       <header className="header">
         <div className="header-container">
-          <img
-            src="https://media.istockphoto.com/id/1166149111/vector/chef-in-a-cooking-hat-vector-outline-icon-food-concept-for-graphic-design-logo-web-site.jpg?s=612x612&w=0&k=20&c=ars2r_Y6s5OSSLHymV6MAvhxokUDqxSaxDK36ibhjgk="
-            alt="chef-claude-icon"
-          />
+          <ChefHat className="header-img" />
           <p>Chef Claude</p>
+          <button onClick={props.handleModeBtn}>
+            {props.mode ? <Moon /> : <Sun />}
+          </button>
         </div>
       </header>
     </>
