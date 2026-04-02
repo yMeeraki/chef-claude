@@ -6,10 +6,6 @@ export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipeShown, setRecipeShown] = React.useState(false);
 
-  const ingredientsListItems = ingredients.map((ingredient, index) => (
-    <li key={index}>{ingredient}</li>
-  ));
-
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
@@ -32,7 +28,7 @@ export default function Main() {
       </form>
       {ingredients.length > 0 && (
         <IngredientsList
-          ingredientsListItems={ingredientsListItems}
+          // ingredientsListItems={ingredientsListItems}
           ingredients={ingredients}
           getRecipe={getRecipe}
         />

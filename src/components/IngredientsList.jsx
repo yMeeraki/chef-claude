@@ -1,9 +1,13 @@
 function IngredientsList(props) {
+  const ingredientsListItems = ingredients.map((ingredient, index) => (
+    <li key={index}>{ingredient}</li>
+  ));
+
   return (
     <section>
       <h2>Ingredients on hand:</h2>
       <ul className="ingredients-list" aria-live="polite">
-        {props.ingredientsListItems}
+        {ingredientsListItems}
       </ul>
       {props.ingredients.length > 3 && (
         <div className="get-recipe-container">
