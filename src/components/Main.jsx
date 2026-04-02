@@ -1,12 +1,13 @@
 import React from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
+import IngredientsList from "./IngredientsList";
 
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipeShown, setRecipeShown] = React.useState(false);
 
-  const ingredientsListItems = ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
+  const ingredientsListItems = ingredients.map((ingredient, index) => (
+    <IngredientsList key={index} ingredient={ingredient} />
   ));
 
   function addIngredient(formData) {
