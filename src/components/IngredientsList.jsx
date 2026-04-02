@@ -1,5 +1,5 @@
 function IngredientsList(props) {
-  const ingredientsListItems = ingredients.map((ingredient, index) => (
+  const ingredientsListItems = props.ingredients.map((ingredient, index) => (
     <li key={index}>{ingredient}</li>
   ));
 
